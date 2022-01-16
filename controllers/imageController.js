@@ -31,10 +31,10 @@ const handleAPICall = (req, res) => {
 }
 
 const handleImage = (req, res, db) => {
-  const { id } = req.body;
+  const { id, faces } = req.body;
   db('users')
     .where({ id })
-    .increment('entries', 1)
+    .increment('entries', faces)
     .returning('entries')
     .then(entries => { res.json(entries[0]); })
     .catch(() => { res.status(400).json('Unable to get entries'); });
