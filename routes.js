@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt-nodejs');
+const bcrypt = require('bcrypt');
 const db = require('./database');
 
 const { handleRegister } = require('./controllers/registerController');
